@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Step Form with Progress Indicator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="form-container">
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+      <div class="steps-wrapper">
+        <div class="step-circle active">1</div>
+        <div class="step-circle">2</div>
+        <div class="step-circle">3</div>
+      </div>
+    </div>
+
+    <form id="multiStepForm" novalidate>
+      
+      <div class="form-step active-step" data-step="1">
+        <h2>Personal Information</h2>
+        <p class="step-subtitle">Please enter your personal details.</p>
+        
+        <div class="input-group">
+          <label for="fullName">Full Name *</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+          <span class="error-msg" id="error-fullName"></span>
+        </div>
+
+        <div class="input-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email address">
+          <span class="error-msg" id="error-email"></span>
+        </div>
+      </div>
+
+      <div class="form-step" data-step="2">
+        <h2>Account Setup</h2>
+        <p class="step-subtitle">Secure your account with a username and password.</p>
+        
+        <div class="input-group">
+          <label for="username">Username *</label>
+          <input type="text" id="username" name="username" placeholder="Choose a unique username">
+          <span class="error-msg" id="error-username"></span>
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password *</label>
+          <input type="password" id="password" name="password" placeholder="At least 6 characters">
+          <span class="error-msg" id="error-password"></span>
+        </div>
+      </div>
+
+      <div class="form-step" data-step="3">
+        <h2>Review & Submit</h2>
+        <p class="step-subtitle">Double-check your information before submission.</p>
+        
+        <div class="summary-card" id="summaryCard">
+          </div>
+
+        <div class="success-message hidden" id="successMessage">
+          🎉 Form Submitted Successfully!
+        </div>
+      </div>
+
+      <div class="form-navigation">
+        <button type="button" id="prevBtn" class="btn btn-secondary hidden">Previous</button>
+        <button type="button" id="nextBtn" class="btn btn-primary">Next</button>
+      </div>
+
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
